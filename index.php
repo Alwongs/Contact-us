@@ -20,13 +20,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = password_hash(trim($_REQUEST['password']), PASSWORD_BCRYPT);
 
     $user_is_created = $mysqli->query("INSERT INTO customers (name, email, gender, password) VALUES ('$name', '$email', '$gender', '$password')");
-} else {
-    $customers = $mysqli->query("select * from customers");
-    echo '<pre>';
-    print_r($customers);
-    echo '</pre>';
+
+    // очищаем request
+    header('Location: /');
+    exit();
+}
+$customers = $mysqli->query("SELECT * FROM customers");
+
+while ($result = mysqli_fetch_array($customers, MYSQLI_ASSOC)) {
+    $users[] = $result;
 }
 
-require 'index.html';
+
+require 'form.html';
 
 exit;
