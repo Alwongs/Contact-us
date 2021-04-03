@@ -1,6 +1,6 @@
 <?php
-require 'header.html';
+require 'html/header.html';
 
-require 'form.html';
+require 'html/form.html';
 
-require 'footer.html';
+require 'html/footer.html';

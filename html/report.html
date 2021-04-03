@@ -1,0 +1,91 @@
+<div class="container jumbotron py-0 px-3 full-height">
+
+    <div class="row bg-info p-2">
+        <div class="col-sm-6">
+            <div class="col item btn btn-outline-primary m-1 outblock" onclick="location.href='list.php'">
+                <a class="btn textin" href="index.php">Форма для отправки сообщения</a>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="col item btn btn-outline-primary m-1 outblock" onclick="location.href='list.php'">
+                <a class="btn textin" href="list.php">Список сообщений</a>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-sm-12">
+            <h3 class="text-center">
+                <?php echo $name ?>, cпасибо за сообщение!
+            </h3>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-sm-12">
+            <h5>
+                Ваши данные:
+            </h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+
+            <table>
+                <tr>
+                    <td>Имя: </td>
+                    <td>
+                        <?php echo $name ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Фамилия: </td>
+                    <td>
+                        <?php echo $surname ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Эл.почта: </td>
+                    <td>
+                        <?php echo $email ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Телефон: </td>
+                    <td>
+                        <?php echo $phone ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Пол: </td>
+                    <td>
+                        <?php echo $gender ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Тема: </td>
+                    <td>
+                        <?php echo $topic ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Сообщение: </td>
+                    <td>
+                        <i>"
+                            <?php echo $text ?>"
+                        </i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <img class="img-thumbnail avatar mt-2" src="downloads/images/<?php echo $image ?>"
+                alt="<?php echo $image ?>">
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-6">
+            Мы обязательно ответим вам в ближайшее время..
+        </div>
+    </div>
+</div>

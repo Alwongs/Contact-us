@@ -1,0 +1,20 @@
+.outblock:hover .textin {
+    color: white;
+}
+
+.outblock {
+    background-color: rgb(229, 243, 220);
+}
+
+.border {
+    border: black solid 2px;
+    border-radius: 5px;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.avatar {
+    max-height: 150px;
+}

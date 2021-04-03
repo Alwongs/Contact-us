@@ -1,0 +1,109 @@
+<div class="container jumbotron py-0 px-3 full-height">
+    <div class="row bg-info p-2">
+        <div class="col-sm-6">
+            <div class="col item btn btn-outline-primary m-1 outblock" onclick="location.href=''">
+                <a class="btn textin" href="">Форма для отправки сообщения</a>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="col item btn btn-outline-primary m-1 outblock" onclick="location.href='list.php'">
+                <a class="btn textin" href="list.php">Список сообщений</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-sm-12">
+            <h3 class="text-center">Заполните форму чтобы отправить нам сообщение</h3>
+        </div>
+    </div>
+
+
+    <?php if (isset($user_is_created)&& !user_iscreated) : ?>
+    <div class="alert alert-danger" role="alert">
+        Пользователь не создан!
+    </div>
+    <?php endif; ?>
+
+    <div class="row my-4 mx-1">
+        <div class="col-sm-12">
+            <form action="form.php" method="POST" enctype="multipart/form-data">
+                <div class="row">
+
+                    <!-- ---------------------- Left part of the form ----------------------------->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Фамилия</label>
+                            <input type="text" class="form-control" id="surname" name="surname" placeholder="surname">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Эл. почта</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="email"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="phone" class="form-control" id="phone" name="phone" placeholder="phone"
+                                required>
+
+                            <div class="form-check form-check-inline mt-3">
+                                <input class="form-check-input" type="radio" name="gender" id="gender1" value="1"
+                                    checked>
+                                <label class="form-check-label" for="gender1">male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="gender2" value="2">
+                                <label class="form-check-label" for="gender2">female</label>
+                            </div>
+
+                            <div class="form-check mt-3">
+                                <input type="checkbox" class="form-check-input" id="checkbox" name="hide">
+                                <label class="form-check-label" for="checkbox">Скрыть контакты</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ---------------------- Right part of the form ----------------------------->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="select" class="form-label">Выберете тему</label>
+                            <select class="form-control" aria-label="Default select example" id="select" name="topic">
+
+                                <option value="Товары">Товары</option>
+                                <option value="Услуги">Услуги</option>
+                                <option value="Цены">Цены</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="textarea" class="form-label">Введите ваше сообщение</label>
+                            <textarea class="form-control" id="textarea" rows="8" name="text"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-file" for="file-input">Выберите файл</label>
+                            <input type="file" class="form-control-file" id="input" name="image" accept="image/*">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ---------------------- Buttons ----------------------------->
+                <hr>
+                <div class="row mt-2">
+                    <div class="col-sm-6 mb-1">
+                        <input type="reset" value="Очистить" class="btn btn-info">
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="submit" class="btn btn-info">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
