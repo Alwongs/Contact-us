@@ -1,7 +1,9 @@
 <?php
 require_once 'functions/connection.php';
 
-$lastPost = $connection->query("SELECT * FROM customers ORDER BY id DESC LIMIT 1");
+$id = $_REQUEST['id'];
+
+$lastPost = $connection->query("SELECT * FROM customers WHERE id=$id");
 $result = mysqli_fetch_array($lastPost, MYSQLI_ASSOC);
 
 $name = $result['name'];
@@ -19,13 +21,8 @@ if ($result['gender'] == 1) {
     $gender = 'жен.';
 }
 
-
-
-var_dump($image);
-
-
 require 'html/header.html';
 
-require 'html/report.html';
+require 'html/message.html';
 
 require 'html/footer.html';
