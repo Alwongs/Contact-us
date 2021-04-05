@@ -16,9 +16,5 @@
 }
 
 .avatar {
-    max-height: 150px;
-}
-
-.thead> div {
-    font-weight: 400;
+    height: 75px;
 }

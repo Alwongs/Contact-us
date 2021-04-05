@@ -25,47 +25,53 @@
             <?php foreach ($users as $user) : ?>
             <div class="row border-bottom">
 
-                <div class="col-sm-3">
-                    <a href="message.php?id=<?php echo $user['id'] ?>">
+                <div class="col-sm-4">
+                    <img class="avatar p-1" src="downloads/images/<?php echo $user['image'] ?>"
+                        alt="<?php echo $image ?>">
+                </div>
+
+                <div class="col-sm-4">
+                    <div>
                         <?php echo $user['name'] . ' ' . $user['surname'] ?>
-                    </a>
+                    </div>
+                    <div>
+                        <!-- Скрыть контактные данные -->
+                        <?php if($user['hide'] !== 'on') : ?>
+                        <div>
+                            <?php echo $user['email'] ?>
+                        </div>
+                        <div>
+                            <?php echo $user['phone'] ?>
+                        </div>
+
+                        <?php else : ?>
+                        <div>
+                            <span style="color:grey;">скрыт</span>
+                        </div>
+                        <div>
+                            <span style="color:grey;">скрыт</span>
+                        </div>
+                        <?php endif; ?>
+                    </div>
                 </div>
 
-                <!-- Скрыть контактные данные -->
-                <?php if($user['hide'] !== 'on') : ?>
-                <div class="col-sm-3">
-                    <?php echo $user['email'] ?>
-                </div>
-                <div class="col-sm-3">
-                    <?php echo $user['phone'] ?>
-                </div>
+                <div class="col-sm-4">
+                    <!-- Выбор пола -->
+                    <?php if($user['gender'] == '1') : ?>
+                    <div>
+                        муж.
+                    </div>
+                    <?php else : ?>
+                    <div>
+                        жен.
+                    </div>
+                    <?php endif; ?>
 
-                <?php else : ?>
-                <div class="col-sm-3">
-                    <span style="color:grey;">скрыт</span>
-                </div>
-                <div class="col-sm-3">
-                    <span style="color:grey;">скрыт</span>
-                </div>
-
-                <?php endif; ?>
-
-                <!-- Выбор пола -->
-                <?php if($user['gender'] == '1') : ?>
-                <div class="col-sm-1">
-                    муж.
-                </div>
-                <?php else : ?>
-                <div class="col-sm-1">
-                    жен.
-                </div>
-                <?php endif; ?>
-
-                <div class="col-sm-1">
-                    <?php echo $user['topic'] ?>
+                    <div>
+                        <?php echo $user['topic'] ?>
+                    </div>
                 </div>
             </div>
-
             <?php endforeach; ?>
         </div>
     </div>
@@ -104,3 +110,8 @@
         </div>
     </div>
 </div>
+
+
+<a href="message.php?id=<?php echo $user['id'] ?>">
+    <?php echo $user['name'] . ' ' . $user['surname'] ?>
+</a>
