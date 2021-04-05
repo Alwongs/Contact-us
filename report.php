@@ -19,9 +19,25 @@ if ($result['gender'] == 1) {
     $gender = 'жен.';
 }
 
+// ---------- отправка email -----------------
+$to = 'Alwong@ya.ru';
+$subject = 'Новое сообщение с сайта на тему "' . $topic . '"';
+$message = '
+<html>
+<head>
+  <title>Ваша форма отправлена успешно</title>
+</head>
+<body>
+  <p>' . $name . ' ' . $surname . ' пишет:</p>
+  <p>' . $text . ' пишет:</p>
+</body>
+</html>';
 
+// Для отправки HTML-письма должен быть установлен заголовок Content-type
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-var_dump($image);
+$emailIsSent = mail($to, $subject, $message, $headers);
 
 
 require 'html/header.html';

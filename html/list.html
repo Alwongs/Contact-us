@@ -23,10 +23,10 @@
     <div class="row mx-2">
         <div class="col-sm-12">
             <?php foreach ($users as $user) : ?>
-            <div class="row border-bottom">
+            <div class="row my-2 p-2 border bg-white">
 
                 <div class="col-sm-4">
-                    <img class="avatar p-1" src="downloads/images/<?php echo $user['image'] ?>"
+                    <img class="avatar m-1" src="downloads/images/<?php echo $user['image'] ?>"
                         alt="<?php echo $image ?>">
                 </div>
 
@@ -59,16 +59,22 @@
                     <!-- Выбор пола -->
                     <?php if($user['gender'] == '1') : ?>
                     <div>
-                        муж.
+                        пол: муж.
                     </div>
                     <?php else : ?>
                     <div>
-                        жен.
+                        пол: жен.
                     </div>
                     <?php endif; ?>
 
                     <div>
+                        категория:
                         <?php echo $user['topic'] ?>
+                    </div>
+                    <div>
+                        <a href="message.php?id=<?php echo $user['id'] ?>">
+                            читать сообщение
+                        </a>
                     </div>
                 </div>
             </div>
@@ -110,8 +116,3 @@
         </div>
     </div>
 </div>
-
-
-<a href="message.php?id=<?php echo $user['id'] ?>">
-    <?php echo $user['name'] . ' ' . $user['surname'] ?>
-</a>

@@ -27,8 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if ($user_is_created) {
-
-    $messages_db = "<span style=\"color: green;\">успішно відправленно.</span>";
     header("Location: report.php");
     exit();
 }

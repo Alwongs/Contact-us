@@ -19,23 +19,23 @@
             </h3>
         </div>
     </div>
+    <div class="row my-3">
+        <div class="col-sm-12">
+            <h3 class="text-center">
+                <?php echo $name . '  ' . $surname ?>
+            </h3>
+        </div>
+    </div>
     <div class="row mx-2">
         <div class="col-sm-12">
             <div class="row">
+                <div class="col-md-6">
+                    <img class="img-thumbnail image mt-2" src="downloads/images/<?php echo $image ?>"
+                        alt="<?php echo $image ?>">
+                </div>
                 <div class="col-sm-6">
-                    <table>
-                        <tr>
-                            <td>Имя: </td>
-                            <td>
-                                <?php echo $name ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Фамилия: </td>
-                            <td>
-                                <?php echo $surname ?>
-                            </td>
-                        </tr>
+                    <hr>
+                    <table class="my-2">
                         <tr>
                             <td>Эл.почта: </td>
                             <td>
@@ -60,23 +60,26 @@
                                 <?php echo $topic ?>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Сообщение: </td>
-                            <td>
-                                <i>"
-                                    <?php echo $text ?>"
-                                </i>
-                            </td>
-                        </tr>
                     </table>
+                    <hr>
                 </div>
-                <div class="col-md-6">
-                    <img class="img-thumbnail avatar mt-2" src="downloads/images/<?php echo $image ?>"
-                        alt="<?php echo $image ?>">
+            </div>
+            <div class="row my-2">
+                <div class="col-sm-12">
+                    <i>"
+                        <?php echo $text ?>"
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis impedit adipisci consequuntur
+                        porro minus animi distinctio rerum quam, perspiciatis hic dignissimos dolore sunt dolorem eius
+                        maxime fugit nostrum voluptatum. Rem. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Officiis impedit adipisci consequuntur
+                        porro minus animi distinctio rerum quam, perspiciatis hic dignissimos dolore sunt dolorem eius
+                        maxime fugit nostrum voluptatum. Rem.
+                    </i>
                 </div>
             </div>
         </div>
     </div>
+
 
 
     <div class="row m-3 border-top py-2">

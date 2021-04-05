@@ -18,3 +18,11 @@
 .avatar {
     height: 75px;
 }
+
+.image {
+    height: 200px;
+}
+
+td {
+    padding-right: 10px;
+}
