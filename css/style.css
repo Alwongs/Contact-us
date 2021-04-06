@@ -11,8 +11,8 @@
     border-radius: 5px;
 }
 
-.full-height {
-    height: 100vh;
+.container {
+    min-height: 100vh;
 }
 
 .avatar {

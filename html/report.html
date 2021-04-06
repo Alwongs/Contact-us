@@ -1,5 +1,4 @@
-<div class="container jumbotron py-0 px-3 full-height">
-
+<div class="container jumbotron p-0 px-3 my-0">
     <div class="row bg-info p-2">
         <div class="col-sm-6">
             <div class="col item btn btn-outline-primary m-1 outblock" onclick="location.href='list.php'">
@@ -14,12 +13,18 @@
     </div>
     <div class="row my-3">
         <div class="col-sm-12">
-            <h3 class="text-center">
+            <h4 class="text-center m-0">
                 <?php echo $name ?>, cпасибо за сообщение!
-            </h3>
+            </h4>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-12 text-center">
+            Мы обязательно ответим вам в ближайшее время..
         </div>
     </div>
 
+    <!-- --------- Уведомление об отправке email ------------
     <?php if ($emailIsSent) : ?>
     <div class="row my-1">
         <div class="col-sm-12">
@@ -28,11 +33,11 @@
             </div>
         </div>
     </div>
-    <?php endif ?>
+    <?php endif ?> -->
 
     <div class="row my-3">
-        <div class="col-sm-12">
-            <h5>
+        <div class="col-sm-12 mx-4">
+            <h5 class="my-0">
                 Ваши данные:
             </h5>
         </div>
@@ -40,7 +45,7 @@
 
     <div class="row">
         <div class="col-sm-6">
-            <table>
+            <table class="mx-auto my-3">
                 <tr>
                     <td>Имя: </td>
                     <td>
@@ -79,13 +84,11 @@
                 </tr>
             </table>
 
-
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 text-center">
             <img class="img-thumbnail image" src="downloads/images/<?php echo $image ?>" alt="<?php echo $image ?>">
         </div>
     </div>
-
 
     <div class="row m-4">
         <div class="col-sm-8">
@@ -94,11 +97,12 @@
             </i>
         </div>
     </div>
-
-
-    <div class="row mt-2">
-        <div class="col-sm-12 text-center">
-            Мы обязательно ответим вам в ближайшее время..
+    <hr class="my-0">
+    <div class="row">
+        <div class="col-sm-2">
+            <input class="btn btn-info m-3" type="button" onclick="history.back();" value="Назад" />
         </div>
     </div>
+
+
 </div>
