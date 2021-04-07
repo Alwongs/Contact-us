@@ -22,7 +22,7 @@ $total = $row[0];
 $numOfPages = ceil($total / $notesPerPage);
 
 // ------ Запрос и вывод записей ------
-$customers = $connection->query("SELECT * FROM customers LIMIT $start, $notesPerPage");
+$customers = $connection->query("SELECT * FROM customers ORDER BY id DESC LIMIT $start, $notesPerPage");
 
 while ($result = mysqli_fetch_array($customers, MYSQLI_ASSOC)) {
     $users[] = $result;

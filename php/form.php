@@ -1,6 +1,7 @@
 <?php
 
 require_once '../functions/connection.php';
+require_once '../functions/test.php';
 
 // ------ Check connection ---------
 if (!$connection) {
@@ -8,15 +9,15 @@ if (!$connection) {
 }
 // --------- get data from form ------------
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = trim($_REQUEST['name']);
-    $surname = trim($_REQUEST['surname']);
-    $email = trim($_REQUEST['email']);
-    $phone = trim($_REQUEST['phone']);
-    $gender = $_REQUEST['gender'];
-    $hide = $_REQUEST['hide'];
-    $topic = $_REQUEST['topic'];
-    $text = trim($_REQUEST['text']);
-    move_uploaded_file($_FILES['image']['tmp_name'], 'downloads/images/' . $_FILES['image']['name']);
+    $name = test_input($_REQUEST['name']);
+    $surname = test_input($_REQUEST['surname']);
+    $email = test_input($_REQUEST['email']);
+    $phone = test_input($_REQUEST['phone']);
+    $gender = test_input($_REQUEST['gender']);
+    $hide = test_input($_REQUEST['hide']);
+    $topic = test_input($_REQUEST['topic']);
+    $text = test_input($_REQUEST['text']);
+    move_uploaded_file($_FILES['image']['tmp_name'], '../downloads/images/' . $_FILES['image']['name']);
     $image = $_FILES['image']['name'];
 
     // -------- query -------
@@ -25,6 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if ($user_is_created) {
-    header("Location: php/report.php");
+    header("Location: report.php");
     exit();
 }

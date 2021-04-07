@@ -29,7 +29,7 @@ $message = '
 </head>
 <body>
   <h4>' . $name . ' ' . $surname . ' пишет:</h4>
-  <p>' . $text . ' пишет:</p>
+  <p>' . $text . '</p>
 </body>
 </html>';
 
