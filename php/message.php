@@ -1,5 +1,5 @@
 <?php
-require_once 'functions/connection.php';
+require_once '../functions/connection.php';
 
 $id = $_REQUEST['id'];
 
@@ -21,8 +21,8 @@ if ($result['gender'] == 1) {
     $gender = 'жен.';
 }
 
-require 'html/header.html';
+require '../html/header.html';
 
-require 'html/message.html';
+require '../html/message.html';
 
-require 'html/footer.html';
+require '../html/footer.html';

@@ -1,6 +1,6 @@
 <?php
 
-require_once 'functions/connection.php';
+require_once '../functions/connection.php';
 
 // ------ Текущая страница --------
 if (isset($_GET['page'])) {
@@ -8,7 +8,7 @@ if (isset($_GET['page'])) {
 } else $page = 1;
 
 // ----- кол-во записей на странице -------
-$notesPerPage = 5;
+$notesPerPage = 4;
 
 // ---- с какой записи выводить -------
 $start = ($page * $notesPerPage) - $notesPerPage;
@@ -28,8 +28,8 @@ while ($result = mysqli_fetch_array($customers, MYSQLI_ASSOC)) {
     $users[] = $result;
 }
 
-require 'html/header.html';
+require '../html/header.html';
 
-require 'html/list.html';
+require '../html/list.html';
 
-require 'html/footer.html';
+require '../html/footer.html';

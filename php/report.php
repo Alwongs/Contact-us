@@ -1,5 +1,5 @@
 <?php
-require_once 'functions/connection.php';
+require_once '../functions/connection.php';
 
 $lastPost = $connection->query("SELECT * FROM customers ORDER BY id DESC LIMIT 1");
 $result = mysqli_fetch_array($lastPost, MYSQLI_ASSOC);
@@ -14,9 +14,9 @@ $topic = $result['topic'];
 $text = $result['text'];
 $image = $result['image'];
 if ($result['gender'] == 1) {
-    $gender = 'муж.';
+  $gender = 'муж.';
 } else {
-    $gender = 'жен.';
+  $gender = 'жен.';
 }
 
 // ---------- отправка email -----------------
@@ -28,7 +28,7 @@ $message = '
   <title>Ваша форма отправлена успешно</title>
 </head>
 <body>
-  <p>' . $name . ' ' . $surname . ' пишет:</p>
+  <h4>' . $name . ' ' . $surname . ' пишет:</h4>
   <p>' . $text . ' пишет:</p>
 </body>
 </html>';
@@ -40,8 +40,8 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 $emailIsSent = mail($to, $subject, $message, $headers);
 
 
-require 'html/header.html';
+require '../html/header.html';
 
-require 'html/report.html';
+require '../html/report.html';
 
-require 'html/footer.html';
+require '../html/footer.html';

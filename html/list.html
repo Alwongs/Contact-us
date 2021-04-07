@@ -3,8 +3,8 @@
     <!-- ------------ Перемещение по сайту ------------ -->
     <div class="row bg-info p-2">
         <div class="col-sm-6">
-            <div class="col item btn btn-outline-primary m-1 outblock" onclick="location.href='index.php'">
-                <a class="btn textin" href="index.php">Форма для отправки сообщения</a>
+            <div class="col item btn btn-outline-primary m-1 outblock" onclick="location.href='../index.php'">
+                <a class="btn textin" href="../index.php">Форма для отправки сообщения</a>
             </div>
         </div>
         <div class="col-sm-6">
@@ -26,7 +26,7 @@
             <div class="row my-2 p-2 border bg-white">
 
                 <div class="col-sm-4">
-                    <img class="avatar m-1" src="downloads/images/<?php echo $user['image'] ?>"
+                    <img class="avatar m-1" src="../downloads/images/<?php echo $user['image'] ?>"
                         alt="<?php echo $image ?>">
                 </div>
 
@@ -67,20 +67,22 @@
                     <!-- Выбор пола -->
                     <?php if($user['gender'] == '1') : ?>
                     <div>
-                        пол: муж.
+                        <span style="color:grey;"> пол: мужcкой</span>
+
                     </div>
                     <?php else : ?>
                     <div>
-                        пол: жен.
+                        <span style="color:grey;"> пол: женский</span>
                     </div>
                     <?php endif; ?>
 
                     <div>
-                        категория:
-                        <?php echo $user['topic'] ?>
+                        <span style="color:grey;"> категория:
+                            <?php echo $user['topic'] ?>
+                        </span>
                     </div>
                     <div>
-                        <a href="message.php?id=<?php echo $user['id'] ?>">
+                        <a href="../php/message.php?id=<?php echo $user['id'] ?>">
                             читать сообщение
                         </a>
                     </div>
@@ -112,7 +114,7 @@
                     <?php else: ?>
 
                     <li class="page-item">
-                        <a class="page-link" href="list.php?page=<?php echo $i ?>">
+                        <a class="page-link" href="../php/list.php?page=<?php echo $i ?>">
                             <?php echo $i ?>
                         </a>
                     </li>
