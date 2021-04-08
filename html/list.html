@@ -3,8 +3,8 @@
     <!-- ------------ Перемещение по сайту ------------ -->
     <div class="row bg-info p-2">
         <div class="col-sm-6">
-            <div class="col item btn btn-outline-primary m-1 outblock" onclick="location.href='../index.php'">
-                <a class="btn textin" href="../index.php">Форма для отправки сообщения</a>
+            <div class="col item btn btn-outline-primary m-1 outblock" onclick="location.href='/'">
+                <a class="btn textin" href="/">Форма для отправки сообщения</a>
             </div>
         </div>
         <div class="col-sm-6">
@@ -82,7 +82,7 @@
                         </span>
                     </div>
                     <div>
-                        <a href="../php/message.php?id=<?php echo $user['id'] ?>">
+                        <a href="/message/<?php echo $user['id'] ?>">
                             читать сообщение
                         </a>
                     </div>
@@ -114,7 +114,7 @@
                     <?php else: ?>
 
                     <li class="page-item">
-                        <a class="page-link" href="../php/list.php?page=<?php echo $i ?>">
+                        <a class="page-link" href="/list&page=<?php echo $i ?>">
                             <?php echo $i ?>
                         </a>
                     </li>

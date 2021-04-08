@@ -1,6 +1,6 @@
 <?php
 
-require_once '../functions/connection.php';
+require_once 'functions/connection.php';
 
 // ------ Текущая страница --------
 if (isset($_GET['page'])) {
@@ -13,7 +13,7 @@ $notesPerPage = 4;
 // ---- с какой записи выводить -------
 $start = ($page * $notesPerPage) - $notesPerPage;
 
-// ----- всего записей в таблице ------
+// ----- количество записей в таблице ------
 $res = $connection->query("SELECT COUNT(*) FROM customers");
 $row = mysqli_fetch_row($res);
 $total = $row[0];
@@ -28,8 +28,8 @@ while ($result = mysqli_fetch_array($customers, MYSQLI_ASSOC)) {
     $users[] = $result;
 }
 
-require '../html/header.html';
+require 'html/header.html';
 
-require '../html/list.html';
+require 'html/list.html';
 
-require '../html/footer.html';
+require 'html/footer.html';

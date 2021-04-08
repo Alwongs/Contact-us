@@ -1,10 +1,11 @@
 <?php
-require_once '../functions/connection.php';
+require_once 'functions/connection.php';
 
-$id = $_REQUEST['id'];
+//$userId передается роутером index.php
 
-$lastPost = $connection->query("SELECT * FROM customers WHERE id=$id");
-$result = mysqli_fetch_array($lastPost, MYSQLI_ASSOC);
+// ------ получаем сообщение по id -------
+$messageById = $connection->query("SELECT * FROM customers WHERE id=$userId");
+$result = mysqli_fetch_array($messageById, MYSQLI_ASSOC);
 
 $name = $result['name'];
 $surname = $result['surname'];
@@ -21,8 +22,8 @@ if ($result['gender'] == 1) {
     $gender = 'жен.';
 }
 
-require '../html/header.html';
+require 'html/header.html';
 
-require '../html/message.html';
+require 'html/message.html';
 
-require '../html/footer.html';
+require 'html/footer.html';
